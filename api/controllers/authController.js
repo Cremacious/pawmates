@@ -17,10 +17,10 @@ export const signup = async (req, res) => {
       });
     }
 
-    if (age < 18) {
+    if (age < 2) {
       return res.status(400).json({
         success: false,
-        message: 'You must at lest 18 years old',
+        message: 'Your dog cannot be a puppy!',
       });
     }
 
