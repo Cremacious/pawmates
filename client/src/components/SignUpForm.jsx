@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from '../store/useAuthStore';
 
 const SignUpForm = () => {
   const [name, setName] = useState('');
@@ -9,15 +9,14 @@ const SignUpForm = () => {
   const [age, setAge] = useState('');
   const [genderPreference, setGenderPreference] = useState('');
 
-  //   const { signup, loading } = useAuthStore();
-  const loading = false;
+  const { signup, loading } = useAuthStore();
 
   return (
     <form
       className="space-y-6"
       onSubmit={(e) => {
         e.preventDefault();
-        // signup({ name, email, password, gender, age, genderPreference });
+        signup({ name, email, password, gender, age, genderPreference });
       }}
     >
       {/* NAME */}
@@ -36,7 +35,7 @@ const SignUpForm = () => {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="bg-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"
+            className="bg-white text-slate-800 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"
           />
         </div>
       </div>
@@ -58,7 +57,7 @@ const SignUpForm = () => {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"
+            className="bg-white text-slate-800 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"
           />
         </div>
       </div>
@@ -80,7 +79,7 @@ const SignUpForm = () => {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="bg-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"
+            className="bg-white text-slate-800 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"
           />
         </div>
       </div>
@@ -103,7 +102,7 @@ const SignUpForm = () => {
             onChange={(e) => setAge(e.target.value)}
             min="18"
             max="120"
-            className="bg-white appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"
+            className="bg-white text-slate-800 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"
           />
         </div>
       </div>
@@ -134,7 +133,7 @@ const SignUpForm = () => {
               type="checkbox"
               checked={gender === 'female'}
               onChange={() => setGender('female')}
-              className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
+              className="h-4 w-4  text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
             />
             <label
               htmlFor="female"
