@@ -103,3 +103,6 @@ const seedUsers = async () => {
 };
 
 seedUsers();
+
+
+// node ./api/seeds/user.js
