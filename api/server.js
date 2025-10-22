@@ -9,6 +9,7 @@ import messageRoutes from './routes/messageRoutes.js';
 import cookieParser from 'cookie-parser';
 import { createServer } from 'http';
 import { initializeSocket } from './socket/socket.server.js';
+import path from 'path';
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
